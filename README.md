@@ -18,7 +18,9 @@ import plotly.express as px
 df = pd.read_csv("chuvas_AL_2023.csv", sep=";")
 df.head()
 ```
+### Saída obtida:
 
+![Visualização inicial da tabela](head_tabela.png.png)
 - `read_csv()` foi utilizado para ler o arquivo CSV contendo os dados pluviométricos dos municípios.
 
 - `sep=";"` define os dados do arquivo separados por ponto e vírgula.
