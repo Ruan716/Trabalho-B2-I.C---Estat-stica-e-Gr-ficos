@@ -226,3 +226,5 @@ O gráfico interativo original feito com Plotly Express pode ser consultado no l
 
 - `plt.show()` exibe o gráfico.
 
+#### Link do Colab:
+https://colab.research.google.com/drive/182iCSuUVUR4LVvlCCkIARquWmQQK8awT?usp=sharing
