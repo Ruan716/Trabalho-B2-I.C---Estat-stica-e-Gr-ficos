@@ -144,32 +144,83 @@ plt.xticks(rotation=90)
 plt.show()
 ```
 ### Resultado obtido:
-![Gráfico de precipitação em Agosto](grafico_agosto.png)
+![Gráfico de precipitação em Agosto](grafico_municipios.png)
 
-* `sort_values("AGO", ascending=False)` ordena os municípios do maior para o menor valor de precipitação em Agosto.
+- `sort_values("AGO", ascending=False)` ordena os municípios do maior para o menor valor de precipitação em Agosto.
 
-* `head(5)` seleciona apenas os 5 municípios com maiores índices.
+- `head(5)` seleciona apenas os 5 municípios com maiores índices.
 
-* `top5_agosto` é uma variável feita para armazenar essas informações.
+- `top5_agosto` é uma variável feita para armazenar essas informações.
 
-* `plt.bar()` cria um gráfico de barras para comparação entre os municípios.
+- `plt.bar()` cria um gráfico de barras para comparação entre os municípios.
 
-* `top5_agosto["MUNICIPIO"]` define os municípios no eixo horizontal.
+- `top5_agosto["MUNICIPIO"]` define os municípios no eixo horizontal.
 
-* `top5_agosto["AGO"]` define os valores de precipitação no eixo vertical.
+- `top5_agosto["AGO"]` define os valores de precipitação no eixo vertical.
 
-* `plt.title()` adiciona um título ao gráfico.
+- `plt.title()` adiciona um título ao gráfico.
 
-* `plt.xlabel()` define o nome do eixo X.
+- `plt.xlabel()` define o nome do eixo X.
 
-* `plt.ylabel()` define o nome do eixo Y.
+- `plt.ylabel()` define o nome do eixo Y.
 
-* `plt.xticks(rotation=90)` gira os nomes dos municípios em noventa graus para facilitar a visualização.
+- `plt.xticks(rotation=90)` gira os nomes dos municípios em noventa graus para facilitar a visualização.
 
-* `plt.show()` exibe o gráfico.
+- `plt.show()` mostra o gráfico.
 
 
+### Comparação pluviométrica entre regiões de Alagoas
 
-### Resultado obtido:
+```python id="8yyscf"
+cidade1 = df[df["MUNICIPIO"] == "Maceió"]
 
-(inserir print do gráfico)
+cidade2 = df[df["MUNICIPIO"] == "União dos Palmares"]
+
+cidade3 = df[df["MUNICIPIO"] == "Arapiraca"]
+
+cidade4 = df[df["MUNICIPIO"] == "Santana do Ipanema"]
+
+meses = ["JAN", "JUN", "NOV"]
+```
+- Foram selecionados 4 municípios representando diferentes regiões do estado.
+
+- `df[df["MUNICIPIO"] == "..."]` foi utilizado para filtrar individualmente cada município.
+
+- A lista `meses` foi criada contendo apenas os meses solicitados na atividade (`JAN`, `JUN` e `NOV`).
+
+- `cidadeX[meses].values[0]` seleciona os valores correspondentes aos meses escolhidos.
+  
+```python id="8yyscf"
+plt.bar(meses, cidade1[meses].values[0], label="Maceió")
+
+plt.bar(meses, cidade2[meses].values[0], alpha=0.7, label="União dos Palmares")
+
+plt.bar(meses, cidade3[meses].values[0], alpha=0.5, label="Arapiraca")
+
+plt.bar(meses, cidade4[meses].values[0], alpha=0.3, label="Santana do Ipanema")
+
+plt.title("Comparação de precipitação entre regiões")
+
+plt.xlabel("Meses")
+
+plt.ylabel("Precipitação")
+
+plt.legend()
+
+plt.show()
+```
+
+- `plt.bar()` cria gráficos de barras para comparação entre os municípios.
+
+- O parâmetro `alpha` foi utilizado para alterar a transparência das barras e facilitar a visualização.
+
+- `plt.title()` adiciona um título ao gráfico.
+
+- `plt.xlabel()` define o eixo horizontal.
+
+- `plt.ylabel()` define o eixo vertical.
+
+- `plt.legend()` cria uma legenda identificando cada município.
+
+- `plt.show()` exibe o gráfico.
+
