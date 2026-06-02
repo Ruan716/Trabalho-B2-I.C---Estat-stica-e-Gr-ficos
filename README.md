@@ -88,7 +88,7 @@ df.loc[df["FEV"].idxmin(), "MUNICIPIO"]
 
     Menor índice pluviométrico:
 
-### Análise do comportamento das chuvas em Maceió ao longo do ano
+### Análise do comportamento das chuvas em Maceió ao longo do ano:
 
 ```python
 meses=["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"]
@@ -105,12 +105,14 @@ plt.ylabel("Precipitação")
 
 plt.show()
 ```
+### Resultado obtido:
+![Gráfico de precipitação de Maceió](grafico_maceio.png)
 
-- A lista `meses` foi criada para armazenar os meses utilizados no eixo horizontal do gráfico.
+- `meses` é uma lista feita para armazenar os meses utilizados no eixo horizontal do gráfico.
 
 - `df[df["MUNICIPIO"] == "Maceió"]` filtra a tabela e seleciona apenas os dados referentes ao município escolhido.
 
-- A variável `cidade` foi utilizada para armazenar os dados filtrados.
+- `cidade` é a variável utilizada para armazenar os dados filtrados.
 
 - `plt.plot()` cria um gráfico de linhas utilizando os meses no eixo X e os valores de precipitação no eixo Y.
 
@@ -124,7 +126,47 @@ plt.show()
 
 - `plt.show()` exibe o gráfico gerado.
 
-- O objetivo desta etapa foi visualizar como a precipitação variou durante os meses do ano em Maceió.
+### Os 5 municípios com o maior volume de precipitação em Agosto:
+
+```python
+top5_agosto = df.sort_values("AGO", ascending=False).head(5)
+
+plt.bar(top5_agosto["MUNICIPIO"], top5_agosto["AGO"])
+
+plt.title("5 municípios com maior precipitação em Agosto")
+
+plt.xlabel("Municípios")
+
+plt.ylabel("Precipitação")
+
+plt.xticks(rotation=90)
+
+plt.show()
+```
+
+* `sort_values("AGO", ascending=False)` ordena os municípios do maior para o menor valor de precipitação em Agosto.
+
+* `head(5)` seleciona apenas os 5 municípios com maiores índices.
+
+* `top5_agosto` é uma variável feita para armazenar essas informações.
+
+* `plt.bar()` cria um gráfico de barras para comparação entre os municípios.
+
+* `top5_agosto["MUNICIPIO"]` define os municípios no eixo horizontal.
+
+* `top5_agosto["AGO"]` define os valores de precipitação no eixo vertical.
+
+* `plt.title()` adiciona um título ao gráfico.
+
+* `plt.xlabel()` define o nome do eixo X.
+
+* `plt.ylabel()` define o nome do eixo Y.
+
+* `plt.xticks(rotation=90)` gira os nomes dos municípios em noventa graus para facilitar a visualização.
+
+* `plt.show()` exibe o gráfico.
+
+
 
 ### Resultado obtido:
 
