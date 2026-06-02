@@ -64,7 +64,7 @@ round(df["JAN"].mean(), 2)
 
 ### Resultado obtido:
     72.19
-
+#
 ### Município obteve o maior e qual obteve o menor índice pluviométrico no mês de Fevereiro:
 
 ```python
@@ -87,7 +87,7 @@ df.loc[df["FEV"].idxmin(), "MUNICIPIO"]
     Joaquim Gomes
 
     Menor índice pluviométrico:
-
+#
 ### Análise do comportamento das chuvas em Maceió ao longo do ano:
 
 ```python
@@ -125,7 +125,7 @@ plt.show()
 - `plt.ylabel()` define o nome do eixo vertical (Y).
 
 - `plt.show()` exibe o gráfico gerado.
-
+#
 ### Os 5 municípios com o maior volume de precipitação em Agosto:
 
 ```python
@@ -167,8 +167,7 @@ plt.show()
 - `plt.xticks(rotation=90)` gira os nomes dos municípios em noventa graus para facilitar a visualização.
 
 - `plt.show()` mostra o gráfico.
-
-
+#
 ### Comparação pluviométrica entre regiões de Alagoas
 
 ```python id="8yyscf"
@@ -209,7 +208,10 @@ plt.legend()
 
 plt.show()
 ```
+### Resultado obtido: 
+![Gráfico interativo comparando regiões](grafico_interativo.png)
 
+O gráfico interativo original feito com Plotly Express pode ser consultado no link do colab que estará no fim desse readme.
 - `plt.bar()` cria gráficos de barras para comparação entre os municípios.
 
 - O parâmetro `alpha` foi utilizado para alterar a transparência das barras e facilitar a visualização.
