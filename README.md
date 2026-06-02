@@ -143,6 +143,8 @@ plt.xticks(rotation=90)
 
 plt.show()
 ```
+### Resultado obtido:
+![Gráfico de precipitação em Agosto](grafico_agosto.png)
 
 * `sort_values("AGO", ascending=False)` ordena os municípios do maior para o menor valor de precipitação em Agosto.
 
